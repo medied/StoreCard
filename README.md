@@ -21,7 +21,7 @@ Create a NSMutableDictionary and add all the Key Value Pairs.
 
 ##Step 1b: Add a image scanning SDK
   
-Create a NSMutableDictionary and add all the Key Value Pairs.
+This is just one of the libraries out there - http://zbar.sourceforge.net/download.html
   
 ```Objective-C
     // Present a barcode reader that scans from the camera feed
