@@ -19,7 +19,7 @@ Create a NSMutableDictionary and add all the Key Value Pairs.
     [self processTransactionWithDictionary:dictionary andResource:@"/PrePaid/Sale"];
 ```
 
-##Step 1b: Add a image scanning SDK
+##Step 1b: Add your choice of an image scanning SDK
   
 This is just one of the libraries out there - http://zbar.sourceforge.net/download.html
   
