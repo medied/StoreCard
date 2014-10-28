@@ -1,6 +1,6 @@
 StoreCard Money2020 iPad Application Demo
 =========
-This is a resource for devlopers and interested payment integrators to see how simple it is to get your iOS POS to integrate with Mercury StoreCard.
+This is a resource for developers and interested payment integrators to see how simple it is to get your iOS POS to integrate with Mercury StoreCard.
 
 ##Step 1: Build Request with Key Value Pairs
   
