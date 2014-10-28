@@ -36,7 +36,7 @@ Create a NSMutableDictionary and add all the Key Value Pairs.
     // Present and release the controller
     [self presentViewController:reader animated:YES completion:nil];
     
-    // Add this as well
+    // Add this as well somwhere in your implementation file
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
     
     ZBarSymbol *symbol = nil;
