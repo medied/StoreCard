@@ -44,17 +44,35 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap)];
     [_lblKeyedSV addGestureRecognizer:tapGesture];
     
-    // Configure settings to target proper platform
+    	// Configure settings to target proper platform
     
-    // CERT
-    // self.url = @"https://w1.mercurycert.net/PaymentsAPI";
-    // self.merchantID = @"003503902913105";
-    // self.merchantPassword = @"xyz";
+   	// BISTRO 6435 Development Network
+		// 1.	Card Range 6050110010032766196 – 6050110010032767195 These cards are branded with the same merchant test environment BISTRO 6435 but this range has Developer Network stamped on the top.
+		// 2.	Card configuration: BID 1, 3 digit security codes printed on card, 5% cash back option
+		// 3.	Card range is set up in SQL for use over legacy CERT for all standard gift card functionality.
+		// 4.	Card range was also built in Prod/Bon Appetite if needed.
+		// 5.	This range over CERT links to a separate Cert version of the StoreCard Manager site externally reached at https://storecard.mercurydev.net For technical, security and firewall reasons this site is not accessible from our internal networked workstations.  Use this URL to access internally:  https://storecardui.test.prod.mps/
+		// 6.	https://storecard.mercurydev.net will be printed on the back of these cards as well as in the corresponding QR code.
+		// 7.	Reload activity on the StoreCard Manager site will be reported on that site as well as pushed out to Cert Developer Reporting.  The StoreCard manager site will include all development transaction history. 
+
+	// CERT
+    	// self.url = @"https://w1.mercurycert.net/PaymentsAPI";
+    	// self.merchantID = @"003503902913105";
+	// self.merchantPassword = @"xyz";
     
-    // PROD
-    self.url = @"https://w1.mercurypay.com/PaymentsAPI";
-    self.merchantID = @"88430189141=BISTRO";
-    self.merchantPassword =@"81301DUR";
+    
+    	// Additional Option: Production Testing
+	// There is a separate set of production issued cards and procedures for testing over BISTRO 6435 in the production environment.  
+
+	// BISTRO 6435 over Production
+	// 1.	Card configuration: BID 543121, 3 digit security codes printed on card, 5% cash back option. Note these cards to not have the Developer Network Stamp on them.  
+	// 2.	Primary MID is 88430189141=BISTRO.  Additional TIDs can be added as needed.
+	// 3.	CRM was used over Production to load two gift ranges for all standard gift card functionality.
+
+    	// PROD
+    	// self.url = @"https://w1.mercurypay.com/PaymentsAPI";
+    	// self.merchantID = @"88430189141=BISTRO";
+    	// self.merchantPassword =@"81301DUR";
 }
 
 - (void)viewDidAppear
