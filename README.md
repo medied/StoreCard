@@ -18,6 +18,37 @@ Create a NSMutableDictionary and add all the Key Value Pairs.
     
     [self processTransactionWithDictionary:dictionary andResource:@"/PrePaid/Sale"];
 ```
+
+##Step 1b: Add a image scanning SDK
+  
+Create a NSMutableDictionary and add all the Key Value Pairs.
+  
+```Objective-C
+    // Present a barcode reader that scans from the camera feed
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+    
+    // Disable rarely used I2/5 to improve performance
+    ZBarImageScanner *scanner = reader.scanner;
+    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+    
+    // Present and release the controller
+    [self presentViewController:reader animated:YES completion:nil];
+    
+    // Add this as well
+    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+    
+    ZBarSymbol *symbol = nil;
+    
+    for(symbol in results)
+        break;
+
+    NSLog(@"StoredValue = %@", symbol.data);
+    [self sendTransaction:symbol.data];
+```
+
+
 ##Step 2: Process the Transaction
 
 Process the transaction with an NSMutableURLRequest.
