@@ -1,7 +1,9 @@
 StoreCard Money2020 iPad Application Demo
 =========
 This is a resource for developers and interested payment integrators to see how simple it is to get your iOS POS to integrate with Mercury StoreCard.
-
+=========
+iOS Simulator Note: QR Code will not scan without building on an actual iPad device. If iOS simulating please make sure you use iPad2
+=========
 ##Step 1: Build Request with Key Value Pairs
   
 Create a NSMutableDictionary and add all the Key Value Pairs.
